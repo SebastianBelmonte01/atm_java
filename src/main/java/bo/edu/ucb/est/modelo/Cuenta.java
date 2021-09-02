@@ -13,11 +13,13 @@ public class Cuenta {
     private String moneda;
     private String tipo;
     private double saldo;
+    private String numeroCuenta;
 
-    public Cuenta(String moneda, String tipo, double saldoInicial) {
+    public Cuenta(String moneda, String tipo, double saldoInicial, String numeroCuenta) {
         this.moneda = moneda;
         this.tipo = tipo;
         this.saldo = saldoInicial;
+        this.numeroCuenta = numeroCuenta;
     }
 
     public boolean retirar(double monto) {
@@ -61,6 +63,19 @@ public class Cuenta {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-    
-    
+
+    public String getNumeroCuenta() {
+        return numeroCuenta;
+    }
+
+    public void setNumeroCuenta(String numeroCuenta) {
+        this.numeroCuenta = numeroCuenta;
+    }
+
+    @Override
+    public String toString() {
+        return "Moneda: " + moneda + "\n"+
+                "Tipo: " + tipo + "\n" +
+                "Saldo: " + saldo + "\n";
+    }
 }
